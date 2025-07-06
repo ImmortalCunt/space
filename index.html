@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Horizon | Pioneering Our Interstellar Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cosmic: {
+                            100: '#f0f9ff',
+                            200: '#e0f2fe',
+                            300: '#bae6fd',
+                            400: '#7dd3fc',
+                            500: '#38bdf8',
+                            600: '#0ea5e9',
+                            700: '#0284c7',
+                            800: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        space: {
+                            100: '#f8fafc',
+                            200: '#f1f5f9',
+                            300: '#e2e8f0',
+                            400: '#cbd5e1',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#475569',
+                            800: '#334155',
+                            900: '#1e293b',
+                            950: '#0f172a',
+                        },
+                        nebula: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --color-cosmic-900: #0c4a6e;
+            --gradient-start: #0f172a;
+            --gradient-end: #4c1d95;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: radial-gradient(ellipse at bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: #e0f2fe;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .header-font {
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.025em;
+        }
+        
+        /* Parallax star background */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .stars span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+                        0 0 0 8px rgba(255, 255, 255, 0.1),
+                        0 0 20px rgba(255, 255, 255, 1);
+            animation: animate 150s linear infinite;
+        }
+        
+        .stars span::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 1px;
+            background: linear-gradient(90deg, #fff, transparent);
+        }
+        
+        @keyframes animate {
+            0% { transform: rotate(315deg) translateX(0); opacity: 1; }
+            70% { opacity: 1; }
+            100% { transform: rotate(315deg) translateX(-1500px); opacity: 0; }
+        }
+        
+        .stars span:nth-child(1) {
+            top: 0;
+            right: 0;
+            left: initial;
+            animation-delay: 0s;
+            animation-duration: 76s;
+        }
+        
+        .stars span:nth-child(2) {
+            top: 0;
+            right: 80px;
+            left: initial;
+            animation-delay: -2s;
+            animation-duration: 110s;
+        }
+        
+        .stars span:nth-child(3) {
+            top: 80px;
+            right: 0;
+            left: initial;
+            animation-delay: -4s;
+            animation-duration: 130s;
+        }
+        
+        .stars span:nth-child(4) {
+            top: 0;
+            right: 180px;
+            left: initial;
+            animation-delay: -6s;
+            animation-duration: 97s;
+        }
+        
+        .stars span:nth-child(5) {
+            top: 0;
+            right: 400px;
+            left: initial;
+            animation-delay: -8s;
+            animation-duration: 82s;
+        }
+        
+        .stars span:nth-child(6) {
+            top: 0;
+            right: 600px;
+            left: initial;
+            animation-delay: -10s;
+            animation-duration: 101s;
+        }
+        
+        .stars span:nth-child(7) {
+            top: 300px;
+            right: 0;
+            left: initial;
+            animation-delay: -12s;
+            animation-duration: 143s;
+        }
+        
+        .stars span:nth-child(8) {
+            top: 0;
+            right: 700px;
+            left: initial;
+            animation-delay: -14s;
+            animation-duration: 88s;
+        }
+        
+        .stars span:nth-child(9) {
+            top: 0;
+            right: 1000px;
+            left: initial;
+            animation-delay: -16s;
+            animation-duration: 93s;
+        }
+        
+        .stars span:nth-child(10) {
+            top: 0;
+            right: 450px;
+            left: initial;
+            animation-delay: -18s;
+            animation-duration: 99s;
+        }
+        
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5),
+                        0 0 80px rgba(0,128,255,0.1);
+            animation: float 9s ease-in-out infinite;
+        }
+        
+        #planet1 {
+            width: 160px;
+            height: 160px;
+            top: 25%;
+            left: 10%;
+            background: radial-gradient(circle at 30px 30px, #3b82f6, #1d4ed8);
+            animation-delay: 0s;
+        }
+        
+        #planet2 {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            right: 15%;
+            background: radial-gradient(circle at 20px 20px, #f97316, #ea580c);
+            animation-delay: 1.5s;
+        }
+        
+        #planet3 {
+            width: 70px;
+            height: 70px;
+            bottom: 15%;
+            left: 20%;
+            background: radial-gradient(circle at 15px 15px, #8b5cf6, #7c3aed);
+            animation-delay: 2.5s;
+        }
+        
+        /* Interactive Orbit */
+        .orbit-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .orbit {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+        
+        .satellite {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #38bdf8;
+            border-radius: 50%;
+            animation: orbit 8s linear infinite;
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 30px #0ea5e9;
+        }
+        
+        .cosmic-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .cosmic-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
+        
+        .galaxy-gradient {
+            background: linear-gradient(135deg, #0f172a, #4c1d95, #0c4a6e);
+        }
+        
+        .glow-on-hover {
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .glow-on-hover::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #38bdf8, #0ea5e9, #38bdf8, #0ea5e9);
+            z-index: -1;
+            border-radius: 9999px;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .glow-on-hover:hover::before {
+            opacity: 1;
+        }
+        
+        .space-fade-top {
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+        
+        .explore-hover:hover .explore-icon {
+            transform: translateX(5px);
+        }
+        
+        .mobile-hidden {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Star background -->
+    <div class="stars-container">
+        <div class="stars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="planet1" class="planet"></div>
+        <div id="planet2" class="planet"></div>
+        <div id="planet3" class="planet mobile-hidden"></div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="container mx-auto px-4 pt-6 relative z-10 space-fade-top">
+        <!-- Navigation -->
+        <nav class="flex items-center justify-between py-6 relative z-20">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cosmic-500 to-cosmic-700 flex items-center justify-center mr-3">
+                    <i class="fas fa-rocket text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-white header-font">
+                    COSMIC<span class="text-cosmic-400">HORIZON</span>
+                </h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-cosmic-200 hover:text-white transition-colors header-font">Missions</a>
+                <a href="#" class="text-cosmic-200 hover:text-white transition-colors header-font">Technology</a>
+                <a href="#" class="text-cosmic-200 hover:text-white transition-colors header-font">Journey</a>
+                <a href="#" class="text-cosmic-200 hover:text-white transition-colors header-font">Community</a>
+                <a href="#" class="text-cosmic-200 hover:text-white transition-colors header-font">Future</a>
+            </div>
+            <button class="bg-cosmic-700 hover:bg-cosmic-600 text-white px-6 py-2 rounded-full transition-colors font-medium flex items-center header-font">
+                Join Now
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </button>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="py-24 md:py-36 relative z-10">
+            <div class="max-w-3xl mx-auto text-center px-4">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 header-font">
+                    UNLEASHING THE <span class="neon-text text-cosmic-300">POTENTIAL</span> OF HUMANITY'S INTERSTELLAR DESTINY
+                </h2>
+                <p class="text-lg md:text-xl text-cosmic-200 mb-10 max-w-2xl mx-auto">
+                    Join our journey to revolutionize space exploration and create a future where humanity thrives among the stars. The final frontier is waiting.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="glow-on-hover bg-gradient-to-r from-cosmic-600 to-cosmic-800 hover:from-cosmic-500 hover:to-cosmic-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+                        Start Your Journey
+                    </button>
+                    <button class="bg-transparent border-2 border-cosmic-600 text-cosmic-200 hover:bg-cosmic-800 px-8 py-4 rounded-full text-lg font-semibold transition-colors">
+                        Explore Missions
+                    </button>
+                </div>
+            </div>
+            
+            <div class="orbit-container mt-20">
+                <div class="orbit">
+                    <div class="satellite"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="py-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="cosmic-card p-8">
+                    <div class="w-14 h-14 rounded-full bg-cosmic-800 flex items-center justify-center mb-6">
+                        <i class="fas fa-star text-cosmic-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 header-font">Interstellar Colonization</h3>
+                    <p class="text-cosmic-300 mb-4">
+                        Establishing sustainable human colonies beyond our solar system. Our pioneering technology enables travel to the closest exoplanets.
+                    </p>
+                    <div class="flex items-center explore-hover text-cosmic-400 hover:text-cosmic-300 cursor-pointer">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 text-sm explore-icon transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="cosmic-card p-8">
+                    <div class="w-14 h-14 rounded-full bg-cosmic-800 flex items-center justify-center mb-6">
+                        <i class="fas fa-atom text-cosmic-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 header-font">Zero-Point Energy</h3>
+                    <p class="text-cosmic-300 mb-4">
+                        Harnessing the quantum vacuum for unlimited, clean energy. Revolutionizing power systems for spacecraft and planetary habitats.
+                    </p>
+                    <div class="flex items-center explore-hover text-cosmic-400 hover:text-cosmic-300 cursor-pointer">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 text-sm explore-icon transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="cosmic-card p-8">
+                    <div class="w-14 h-14 rounded-full bg-cosmic-800 flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-cosmic-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 header-font">Neural Networking</h3>
+                    <p class="text-cosmic-300 mb-4">
+                        Connecting human consciousness across galaxies. Our neural interface technology enables instant communication regardless of distance.
+                    </p>
+                    <div class="flex items-center explore-hover text-cosmic-400 hover:text-cosmic-300 cursor-pointer">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 text-sm explore-icon transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Journey Simulator -->
+        <section class="py-24">
+            <div class="cosmic-card p-8 md:p-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 header-font">Experience Deep Space Travel</h2>
+                        <p class="text-cosmic-300 mb-6">
+                            Step into our immersive simulator and experience the journey to Proxima Centauri b. Feel the acceleration, witness the stars stream by, and prepare for landing on humanity's first interstellar colony.
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <div class="bg-cosmic-900 rounded-xl p-5">
+                                <div class="text-3xl text-cosmic-300 font-bold header-font">4.24</div>
+                                <div class="text-cosmic-500 text-sm">Light Years</div>
+                            </div>
+                            <div class="bg-cosmic-900 rounded-xl p-5">
+                                <div class="text-3xl text-cosmic-300 font-bold header-font">20</div>
+                                <div class="text-cosmic-500 text-sm">Travel Days</div>
+                            </div>
+                            <div class="bg-cosmic-900 rounded-xl p-5">
+                                <div class="text-3xl text-cosmic-300 font-bold header-font">1.3</div>
+                                <div class="text-cosmic-500 text-sm">Earth Masses</div>
+                            </div>
+                        </div>
+                        <button class="glow-on-hover bg-gradient-to-r from-nebula-600 to-nebula-800 hover:from-nebula-500 hover:to-nebula-700 text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            <i class="fas fa-play mr-2"></i> Start Simulation
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-video bg-gradient-to-r from-space-900 to-nebula-900 rounded-xl overflow-hidden relative">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="relative w-64 h-64 flex items-center justify-center">
+                                    <div class="absolute w-full h-full bg-space-900 rounded-full animate-pulse-slow"></div>
+                                    <div class="absolute w-48 h-48 bg-cosmic-700 rounded-full animate-ping opacity-10"></div>
+                                    <div class="absolute w-32 h-32 bg-cosmic-600 rounded-full"></div>
+                                    <div class="absolute w-16 h-16 bg-cosmic-400 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cosmic Community -->
+        <section class="py-20">
+            <div class="text-center max-w-3xl mx-auto mb-20 px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 header-font">Join Our Cosmic Community</h2>
+                <p class="text-lg text-cosmic-300">
+                    We're building a global community of explorers, thinkers, and innovators committed to humanity's interstellar future.
+                </p>
+            </div>
+            
+            <div class="cosmic-card p-8 md:p-12 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl text-cosmic-400 font-bold mb-3 header-font">120K+</div>
+                        <div class="text-cosmic-300">Active Explorers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl text-cosmic-400 font-bold mb-3 header-font">64</div>
+                        <div class="text-cosmic-300">Countries Represented</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl text-cosmic-400 font-bold mb-3 header-font">24/7</div>
+                        <div class="text-cosmic-300">Global Collaboration</div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 border-t border-space-700 pt-10">
+                    <h3 class="text-xl text-white font-bold mb-6 text-center header-font">Sign Up for Mission Updates</h3>
+                    <div class="max-w-lg mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Enter your email" class="bg-space-900 border border-space-700 text-white px-5 py-3 rounded-lg focus:outline-none focus:border-cosmic-500 flex-grow">
+                            <button class="bg-cosmic-700 hover:bg-cosmic-600 text-white px-6 py-3 rounded-lg transition-colors">
+                                Subscribe
+                            </button>
+                        </div>
+                        <p class="text-xs text-center mt-4 text-space-400">
+                            We respect your privacy. You can unsubscribe at any time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="pt-20 pb-12 border-t border-space-800 mt-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="text-lg text-white font-bold mb-4 header-font">Organization</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Leadership</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Partnerships</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg text-white font-bold mb-4 header-font">Technology</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Propulsion</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Habitat Design</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Energy Systems</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Research Papers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg text-white font-bold mb-4 header-font">Missions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Proxima Centauri</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Lunar Gateway</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Mars Initiative</a></li>
+                        <li><a href="#" class="text-cosmic-300 hover:text-white transition-colors">Starbase Earth</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg text-white font-bold mb-4 header-font">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-space-800 flex items-center justify-center hover:bg-space-700 transition-colors">
+                            <i class="fab fa-twitter text-space-300"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-space-800 flex items-center justify-center hover:bg-space-700 transition-colors">
+                            <i class="fab fa-linkedin-in text-space-300"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-space-800 flex items-center justify-center hover:bg-space-700 transition-colors">
+                            <i class="fab fa-instagram text-space-300"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-space-800 flex items-center justify-center hover:bg-space-700 transition-colors">
+                            <i class="fab fa-youtube text-space-300"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-space-500">
+                        For media inquiries: <br>
+                        <a href="mailto:press@cosmichorizon.space" class="text-space-400">press@cosmichorizon.space</a>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-space-800">
+                <p class="text-space-500 text-sm">
+                    © 2023 Cosmic Horizon Interstellar Initiative. All Rights Reserved. Made with <i class="fas fa-heart text-pink-500"></i> for humanity's future.
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Floating elements interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mouse parallax effect
+            const body = document.querySelector('body');
+            const planets = document.querySelectorAll('.planet');
+            
+            body.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth / 2 - e.pageX) / 25;
+                const y = (window.innerHeight / 2 - e.pageY) / 25;
+                
+                planets.forEach((planet, index) => {
+                    const factor = index * 0.5 + 1;
+                    planet.style.transform = `translate(${x * factor}px, ${y * factor}px) scale(1)`;
+                });
+            });
+            
+            // Scroll fade effect
+            window.addEventListener('scroll', () => {
+                const elements = document.querySelectorAll('.cosmic-card');
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight * 0.75) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // Trigger initial scroll event
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>
